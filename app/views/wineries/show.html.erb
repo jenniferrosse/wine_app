@@ -1,0 +1,39 @@
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <h1>
+    <%= @winery.name %>
+  </h1>
+
+  <hr>
+  
+  <p>
+    <%= link_to @winery.website, url_with_protocol(@winery.website), :target => '_blank' %>
+  </p>
+  <%= image_tag @winery.thumbnail.url(:medium) %>
+  <p>
+    <strong>Country:</strong>
+    <%= @winery.country %><br>
+    <strong>Region:</strong>
+    <%= @winery.region %><br>
+    <strong>Sub region:</strong>
+    <%= @winery.sub_region %>
+  </p>
+
+  <p>
+    <strong>Green status:</strong>
+    <%= @winery.green_status %><br>
+    <strong>Certification:</strong>
+    <%= @winery.certification %>
+  </p>
+
+  
+  <p>
+    <%= @winery.about %>
+  </p>
+
+  <%= link_to 'Edit', edit_winery_path(@winery) %> |
+  <%= link_to 'Back', wineries_path %>
+
+</div>
