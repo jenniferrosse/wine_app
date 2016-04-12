@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'pages/home'
 
   get 'pages/contact'
@@ -11,4 +12,6 @@ Rails.application.routes.draw do
   end
 
   root 'pages#home'
+
+  get '*path' => redirect('/')
 end
