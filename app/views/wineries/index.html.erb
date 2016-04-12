@@ -37,14 +37,14 @@
   </table>
 
   <br>
-
-  <h2>Import Wineries</h2>
-
-  <%= form_tag import_wineries_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
+  <% if user_signed_in? %>
+    <h2>Import Wineries</h2>
+  
+    <%= form_tag import_wineries_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import CSV" %>
+    <% end %>
+  
+    <%= link_to 'New Winery', new_winery_path %>
   <% end %>
-
-  <%= link_to 'New Winery', new_winery_path %>
-
 </div>
