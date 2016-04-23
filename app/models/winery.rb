@@ -21,7 +21,7 @@ class Winery < ActiveRecord::Base
     end # end CSV.foreach
   end # end self.import(file)
 
-   has_attached_file :thumbnail, styles: { medium: "200x", small: "150x", thumb: "100x" }
+    has_attached_file :thumbnail, styles: { medium: "300x", small: "350x250#", thumb: "100x" }
     validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\Z/
 
 end # end class

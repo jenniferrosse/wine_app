@@ -1,6 +1,6 @@
 <div class="container">  
    
-  <%= link_to 'New Winery', new_winery_path %>
+  <%= link_to 'New Producer', new_winery_path %>
 
    <br>
    <br>
@@ -65,21 +65,28 @@
     <li><a href="#">All Other Countries</a></li>
   </ul>
 </div>
+<br>
 
  <h1>Producers</h1>
 
+  <hr>
 <div class="row">
   <%= @wineries.each do |winery| %>
-    <div class="col-md-2 col-sm-3">
-      <div class="thumbnail">
-        <%= link_to (image_tag winery.thumbnail.url(:thumb), class: 'image'), winery %>
+    <div class="col-md-2 col-xs-6">
+      <div class="icon">
+        <div class="thumbnail">
+          <%= link_to (image_tag winery.thumbnail.url(:small)), winery %>
+        </div>
+        <div class="caption">
+          <h5><%= link_to winery.name, winery %><h5>
+        </div> 
+      
       </div>
-      <div class="caption">
-        <%= link_to winery.name, winery %>
-      </div> 
-    </div>
+    </div>  
   <% end %>
 </div>
+
+<%= will_paginate @wineries, previous_label: "Blah" %>
 
   <br>
   <% if user_signed_in? %>

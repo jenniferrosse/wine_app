@@ -3,7 +3,7 @@ class WineriesController < ApplicationController
 
   def search 
     if params[:search].present?
-      @wineries = Winery.search(params[:search]).order('name ASC')
+      @wineries = Winery.search(params[:search]).order('name ASC').paginate(:page => params[:page], :per_page => 30)
     else
       @wineries = Winery.all
     end
@@ -12,7 +12,7 @@ class WineriesController < ApplicationController
   # GET /wineries
   # GET /wineries.json
   def index
-    @wineries = Winery.all.order('name ASC')
+    @wineries = Winery.all.order('name ASC').paginate(:page => params[:page], :per_page => 30)
   end
 
   def import
