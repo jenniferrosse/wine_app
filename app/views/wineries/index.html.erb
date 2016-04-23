@@ -9,7 +9,7 @@
       <tr>
         <th>Name</th>
         <th>Country</th>
-        <th>Region</th>
+        <th>Region</th> 
         <th>Sub region</th>
        
         <th>Website</th>
@@ -22,10 +22,10 @@
       <% @wineries.each do |winery| %>
         <tr>
           
-          <td><%= link_to winery.name, winery %></td>
-          <td><%= winery.country %></td>
-          <td><%= winery.region %></td>
-          <td><%= winery.sub_region %></td>
+          <td><%= link_to winery.name, winery %></td>  
+          <td><%= winery.country %></td>  
+          <td><%= winery.region %></td>  
+          <td><%= winery.sub_region %></td>  
      
           <td><%= link_to winery.website, "http://#{winery.website}", :target => "_blank" %></td>
           <td><%= link_to 'Show', winery %></td>
