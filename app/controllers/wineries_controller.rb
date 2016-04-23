@@ -3,7 +3,7 @@ class WineriesController < ApplicationController
 
   def search 
     if params[:search].present?
-      @wineries = Winery.search(params[:search])
+      @wineries = Winery.search(params[:search]).order('name ASC')
     else
       @wineries = Winery.all
     end
