@@ -9,13 +9,16 @@
   <p>
     <%= link_to @winery.website, url_with_protocol(@winery.website), :target => '_blank' %>
   </p>
-  <%= image_tag @winery.thumbnail.url(:medium) %>
-  <p>
+
+
+<div class="row">
+  <div class="col-md-8">  <%= image_tag @winery.thumbnail.url(:medium) %></div>
+  <div class="col-md-4"><p>
     <strong>Country:</strong>
     <%= @winery.country %><br>
     <strong>Region:</strong>
     <%= @winery.region %><br>
-    <strong>Sub region:</strong>
+    <strong>Appelation(s):</strong>
     <%= @winery.sub_region %>
   </p>
 
@@ -24,7 +27,11 @@
     <%= @winery.green_status %><br>
     <strong>Certification:</strong>
     <%= @winery.certification %>
-  </p>
+  </p></div>
+</div>
+  
+
+  
 
   
   <p>
