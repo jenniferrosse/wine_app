@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'devise', '~> 3.5', '>= 3.5.6'
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

@@ -30,7 +30,7 @@
 
   
   <p>
-    <%= @winery.about %>
+    <%= markdown(@winery.about) %>
   </p>
 <% if user_signed_in? %>
   <%= link_to 'Edit', edit_winery_path(@winery) %> |
