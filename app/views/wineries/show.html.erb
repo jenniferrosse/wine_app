@@ -33,6 +33,7 @@
 <% if user_signed_in? %>
   <%= link_to 'Edit', edit_winery_path(@winery) %> |
   <%= link_to 'Back', wineries_path %>
+  <%= link_to 'Destroy', winery, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
 </div>
