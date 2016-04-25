@@ -71,7 +71,7 @@
 
   <hr>
 <div class="row">
-  <%= @wineries.each do |winery| %>
+  <% @wineries.each do |winery| %>
     <div class="col-md-2 col-xs-6">
       <div class="icon">
         <div class="thumbnail">
@@ -86,7 +86,7 @@
   <% end %>
 </div>
 
-<%= will_paginate @wineries, previous_label: "Blah" %>
+<%= will_paginate @wineries, previous_label: "Previous" %>
 
   <br>
   <% if user_signed_in? %>
