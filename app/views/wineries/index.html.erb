@@ -3,6 +3,7 @@
   <%= link_to 'New Producer', new_winery_path %>
 
    <br>
+    <h1>Producers</h1>
    <br>
   
   <div class="btn-group">
@@ -67,8 +68,6 @@
 </div>
 <br>
 
- <h1>Producers</h1>
-
   <hr>
 <div class="row">
   <% @wineries.each do |winery| %>
@@ -86,7 +85,11 @@
   <% end %>
 </div>
 
-<%= will_paginate @wineries, previous_label: "Previous" %>
+<div class="text-center">
+  <ul class="pagination">
+    <%= will_paginate @wineries, renderer: BootstrapPagination::Rails %>
+  </ul>
+</div>
 
   <br>
   <% if user_signed_in? %>
