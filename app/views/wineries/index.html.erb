@@ -1,12 +1,9 @@
-<div class="container">  
-   
-  <%= link_to 'New Producer', new_winery_path %>
+<div class="jumbotron">
+  <div class="container">  
 
-   <br>
     <h1>Producers</h1>
-   <br>
-  
-  <div class="btn-group">
+
+ <div class="btn-group">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       USA <span class="caret"></span>
     </button>
@@ -66,12 +63,18 @@
     <li><a href="#">All Other Countries</a></li>
   </ul>
 </div>
-<br>
+</div>
+</div>
 
-  <hr>
+
+   <div class="container">  
+  <%= link_to 'New Producer', new_winery_path %>
+
+   
+  
 <div class="row">
   <% @wineries.each do |winery| %>
-    <div class="col-md-2 col-xs-6">
+    <div class="col-md-2 col-sm-3 col-xs-6">
       <div class="icon">
         <div class="thumbnail">
           <%= link_to (image_tag winery.thumbnail.url(:small)), winery %>
