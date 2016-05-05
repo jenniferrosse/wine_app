@@ -1,5 +1,8 @@
 class Winery < ActiveRecord::Base
 
+ scope :by_country, -> { where(country: country) }
+
+
   def self.search(search)
     where("name ILIKE ? OR country ILIKE ? OR region ILIKE ? OR sub_region ILIKE ? OR about ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
  

@@ -13,7 +13,12 @@ class WineriesController < ApplicationController
   # GET /wineries.json
   def index
     @wineries = Winery.all.paginate(:page => params[:page], :per_page => 30).order('name ASC')
+
   end
+
+  def country_usa
+    @wineries = Winery.where(country: "USA") 
+  end 
 
   def import
     Winery.import(params[:file])
