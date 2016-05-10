@@ -25,13 +25,16 @@
   
 <div class="row">
   <% @wineries.each do |winery| %>
-    <div class="col-md-2 col-sm-3 col-xs-6">
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="icon">
       <div class="thumbnail">
         <%= link_to (image_tag winery.thumbnail.url(:small)), winery %>
       </div>
       <div class="caption">
         <h5><%= link_to winery.name, winery %><h5>
       </div> 
+    </div>
     </div>
   <% end %>
 </div>
