@@ -9,7 +9,7 @@
 
        <%= form_tag search_wineries_path, method: :get, role: "search" do %>
             <p>
-             <%= text_field_tag :search, params[:search], class: "form-control" %>
+             <%= text_field_tag :search, params[:search], placeholder: "Search" %>
              <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
              </p> 
         <% end %>
@@ -32,7 +32,7 @@
         <div class="thumbnail">
           <%= link_to image_tag(winery.thumbnail.url(:small), class: "img-responsive aspect"), winery %>
           <div class="caption">
-            <h5 class="text-center"><%= link_to winery.name, winery %><h5>
+            <h5 class="text-center"><%= link_to winery.name, winery %></h5>
             </div>
         </div> 
       </div>
