@@ -1,4 +1,10 @@
 module ApplicationHelper
+
+ def full_title(page_title)
+  base_title = "Authentic Wine"
+  page_title.empty? ?  base_title : "#{base_title} | #{page_title}"
+ end
+
   def markdown(text)
   if text.blank?
     nil
