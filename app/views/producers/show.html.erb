@@ -1,0 +1,46 @@
+<div class="container">
+
+  <h1>
+    <%= @producer.name %>
+  </h1>
+
+  <hr>
+  
+  <p>
+    <%= link_to @producer.website, url_with_protocol(@producer.website), :target => '_blank' %>
+  </p>
+
+
+<div class="row">
+  <div class="col-md-8">  <%= image_tag @producer.thumbnail.url(:medium) %></div>
+  <div class="col-md-4"><p>
+    <strong>Country:</strong>
+    <%= @producer.country %><br>
+    <strong>Region:</strong>
+    <%= @producer.region %><br>
+    <strong>Appelation(s):</strong>
+    <%= @producer.sub_region %>
+  </p>
+
+  <p>
+    <strong>Green status:</strong>
+    <%= @producer.green_status %><br>
+    <strong>Certification:</strong>
+    <%= @producer.certification %>
+  </p></div>
+</div>
+  
+
+  
+
+  
+  <p>
+    <%= markdown(@producer.about) %>
+  </p>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_producer_path(@producer) %> |
+  <%= link_to 'Back', producers_path %> |
+  <%= link_to 'Delete', producer_path(@producer), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+</div>

@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-4">
 
-       <%= form_tag search_wineries_path, method: :get, role: "search" do %>
+       <%= form_tag search_producers_path, method: :get, role: "search" do %>
             <p>
              <%= text_field_tag :search, params[:search], class: "form-control" %>
              <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
@@ -19,17 +19,17 @@
 
 
    <div class="container">  
-  <%= link_to 'New Producer', new_winery_path %>
+  <%= link_to 'New Producer', new_producer_path %>
 
 <div class="row">
-  <% @wineries.each do |winery| %>
+  <% @producers.each do |producer| %>
     <div class="col-md-2 col-xs-6">
       <div class="icon">
         <div class="thumbnail">
-          <%= link_to (image_tag winery.thumbnail.url(:small)), winery %>
+          <%= link_to (image_tag producer.thumbnail.url(:small)), producer %>
         </div>
         <div class="caption">
-          <h5><%= link_to winery.name, winery %><h5>
+          <h5><%= link_to producer.name, producer %><h5>
         </div> 
       </div>
     </div>  
@@ -39,12 +39,12 @@
 
 <div class="text-center">
   <ul class="pagination">
-    <%= will_paginate @wineries, renderer: BootstrapPagination::Rails %>
+    <%= will_paginate @producers, renderer: BootstrapPagination::Rails %>
   </ul>
 </div>
 
   <br>
 
-  <%= link_to 'New Winery', new_winery_path %>
+  <%= link_to 'New producer', new_producer_path %>
 
 </div>

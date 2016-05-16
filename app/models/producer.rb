@@ -1,4 +1,4 @@
-class Winery < ActiveRecord::Base
+class Producer < ActiveRecord::Base
 
  scope :by_country, -> { where(country: country) }
 
@@ -13,13 +13,13 @@ class Winery < ActiveRecord::Base
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
 
-      winery_hash = row.to_hash 
-      winery = Winery.where(id: winery_hash["id"])
+      producer_hash = row.to_hash 
+      producer = Producer.where(id: producer_hash["id"])
 
-      if winery.count == 1
-        winery.first.update_attributes(winery_hash)
+      if producer.count == 1
+        producer.first.update_attributes(producer_hash)
       else
-        Winery.create!(winery_hash)
+        Producer.create!(producer_hash)
       end # end if !winery.nil?
     end # end CSV.foreach
   end # end self.import(file)

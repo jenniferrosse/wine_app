@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
-  resources :wineries do
+  resources :producers do
     collection { post :import}
       collection do
         get 'search'
