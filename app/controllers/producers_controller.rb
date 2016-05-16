@@ -28,6 +28,12 @@ class ProducersController < ApplicationController
   # GET /wineries/1
   # GET /wineries/1.json
   def show
+     @hash = Gmaps4rails.build_markers(@producer) do |producer, marker|
+      marker.lat producer.latitude
+      marker.lng producer.longitude
+      marker.infowindow producer.name
+    end
+    
   end
 
   # GET /wineries/new
@@ -87,6 +93,6 @@ class ProducersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producer_params
-      params.require(:producer).permit(:name, :country, :region, :sub_region, :green_status, :certification, :website, :about, :thumbnail)
+      params.require(:producer).permit(:name, :country, :region, :sub_region, :green_status, :certification, :website, :about, :thumbnail, :address, :latitude, :longitude)
     end
 end

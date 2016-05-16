@@ -1,43 +1,60 @@
 <div class="container">
 
-  <h1>
-    <%= @producer.name %>
-  </h1>
-
-  <hr>
-  
-  <p>
-    <%= link_to @producer.website, url_with_protocol(@producer.website), :target => '_blank' %>
-  </p>
-
-
 <div class="row">
-  <div class="col-md-8">  <%= image_tag @producer.thumbnail.url(:medium) %></div>
-  <div class="col-md-4"><p>
-    <strong>Country:</strong>
-    <%= @producer.country %><br>
-    <strong>Region:</strong>
-    <%= @producer.region %><br>
-    <strong>Appelation(s):</strong>
-    <%= @producer.sub_region %>
-  </p>
+  <div class="col-md-8">
+    <hr>
+    <h1 class="text-center"><%= @producer.name %></h1>
+    <p class="text-center"><%= link_to @producer.website, url_with_protocol(@producer.website), :target => '_blank' %></p>
+      <div class="text-center"><%= image_tag @producer.thumbnail.url(:medium) %></div>
+      <br>
+      <br>
+      
+         
+   
+  </div>
+  <div class="col-md-4">
+  <br>
+    <div class="panel panel-default">
+      <div class="panel-body">
 
-  <p>
-    <strong>Green status:</strong>
-    <%= @producer.green_status %><br>
-    <strong>Certification:</strong>
-    <%= @producer.certification %>
-  </p></div>
-</div>
-  
+        <p>
+          <strong>Country:</strong>
+          <%= @producer.country %><br>
+          <strong>Region:</strong>
+          <%= @producer.region %><br>
+          <strong>Appelation(s):</strong>
+          <%= @producer.sub_region %></p>
+          <strong><%= @producer.address %></strong>
+      </div>
 
-  
+     </div>
+     <div style='width: 350px;'>
+        <div id="map" style='width: 350px; height: 350px;'></div>
+      </div>
 
-  
-  <p>
-    <%= markdown(@producer.about) %>
-  </p>
+      <script type="text/javascript">
+      handler = Gmaps.build('Google');
+      handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+        markers = handler.addMarkers(<%=raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(5);
+      });
+      </script> 
+    </div>
+  </div>
+
+<hr>
+<div class="row">
+
+  </div>
+  </div>
+
 <% if user_signed_in? %>
+    <strong>Latitude :</strong>
+    <%= @producer.latitude %><br>
+    <strong>Longitude :</strong>
+    <%= @producer.longitude %><br>
   <%= link_to 'Edit', edit_producer_path(@producer) %> |
   <%= link_to 'Back', producers_path %> |
   <%= link_to 'Delete', producer_path(@producer), method: :delete, data: { confirm: 'Are you sure?' } %>

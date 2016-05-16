@@ -1,5 +1,8 @@
 class Producer < ActiveRecord::Base
 
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
+
  scope :by_country, -> { where(country: country) }
 
 
