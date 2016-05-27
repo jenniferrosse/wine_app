@@ -15,6 +15,66 @@
              </p> 
         <% end %>
       </div>
+      <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      USA <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">California</a></li>
+      <li><a href="#">Oregon</a></li>
+      <li><a href="#">Washington</a></li>
+      <li><a href="#">Other States</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">USA</a></li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      France <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Bordeaux</a></li>
+      <li><a href="#">Burgundy</a></li>
+      <li><a href="#">Champagne</a></li>
+      <li><a href="#">Languedoc</a></li>
+      <li><a href="#">Loire</a></li>
+      <li><a href="#">Rhone</a></li>
+      <li><a href="#">Other Regions</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">All France</a></li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Italy <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Tuscany</a></li>
+      <li><a href="#">Other Regions</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">All Italy</a></li>
+    </ul>
+  </div>
+  
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Other Countries <span class="caret"></span>
+    </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Australia</a></li>
+        <li><a href="#">Austria</a></li>
+        <li><a href="#">Canada</a></li>
+        <li><a href="#">Chile</a></li>
+        <li><a href="#">Germany</a></li>
+        <li><a href="#">New Zealand</a></li>
+        <li><a href="#">Slovenia</a></li>
+        <li><a href="#">Spain</a></li>
+        <li><a href="#">South Africa</a></li>
+        <li><a href="#">Switzerland</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">All Other Countries</a></li>
+      </ul>
+  </div>
     </div>
   </div>
 </div>
@@ -23,8 +83,6 @@
    <div class="container">  
   <%= link_to 'New Producer', new_producer_path %>
 
-
-   
 
   <div class="row">
   <% @producers.each do |producer| %>
@@ -40,6 +98,8 @@
     </div>
   <% end %>
   </div>
+
+  
 
 
 <div class="text-center">

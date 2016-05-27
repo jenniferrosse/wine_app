@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'pages/home'
 
   get 'pages/contact'
+  get 'producers/map_page'
 
   resources :producers do
     collection { post :import}
