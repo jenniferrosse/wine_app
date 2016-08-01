@@ -3,13 +3,16 @@ class Producer < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
- scope :by_country, -> { where(country: country) }
+  #scope :USA, -> (country) { where(:country: country) }
+  #scope :country, lambda (country) { where country: country }
+  scope :search, lambda {|query|
+    where("name ILIKE ? OR country ILIKE ? OR region ILIKE ? OR sub_region ILIKE ? OR about ILIKE ?", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%")
+  }
 
 
-  def self.search(search)
-    where("name ILIKE ? OR country ILIKE ? OR region ILIKE ? OR sub_region ILIKE ? OR about ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
- 
-  end
+  #def self.search(search)
+   # where("name ILIKE ? OR country ILIKE ? OR region ILIKE ? OR sub_region ILIKE ? OR about ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+  #end
 
   require 'csv'
 

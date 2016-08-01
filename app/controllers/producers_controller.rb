@@ -12,8 +12,16 @@ class ProducersController < ApplicationController
   # GET /producers
   # GET /producers.json
   def index
-    @producers = Producer.all.paginate(:page => params[:page], :per_page => 32).order('name ASC')
-
+    if params[:country]
+      @producers = Producer.where(:country => params[:country]).paginate(:page => params[:page], :per_page => 32).order('name ASC')
+      if @producers.empty?
+      flash[:error] = "There are <b>#{@producers.count}</b> in this country".html_safe
+      else
+      flash[:notice] = "There are <b>#{@producers.count}</b> in this country".html_safe
+      end
+    else
+      @producers = Producer.all.paginate(:page => params[:page], :per_page => 32).order('name ASC')
+    end
   end
 
   def map_page
