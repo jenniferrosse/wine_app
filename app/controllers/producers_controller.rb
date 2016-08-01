@@ -19,6 +19,8 @@ class ProducersController < ApplicationController
       else
       flash[:notice] = "There are <b>#{@producers.count}</b> in this country".html_safe
       end
+    elsif
+      @producers = Producer.where(:region => params[:region]).paginate(:page => params[:page], :per_page => 32).order('name ASC')
     else
       @producers = Producer.all.paginate(:page => params[:page], :per_page => 32).order('name ASC')
     end
