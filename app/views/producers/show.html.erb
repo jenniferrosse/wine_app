@@ -51,7 +51,7 @@
 <hr>
 <% if user_signed_in? %>
     <strong>Latitude :</strong>
-    <%= @producer.latitude %><br>
+    <%= @producer.latitude %> |
     <strong>Longitude :</strong>
     <%= @producer.longitude %><br>
   <%= link_to 'Edit', edit_producer_path(@producer) %> |
