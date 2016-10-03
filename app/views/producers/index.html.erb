@@ -105,7 +105,11 @@
   <br>
   <%= link_to 'New Producer', new_producer_path %>
   </div>
-
+<div class="text-center">
+  <ul class="pagination">
+    <%= will_paginate @producers, renderer: BootstrapPagination::Rails %>
+  </ul>
+</div>
   <br>
   <% if user_signed_in? %>
     <h2>Import Producers</h2>
