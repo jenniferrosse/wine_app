@@ -27,11 +27,11 @@ class ProducersController < ApplicationController
   end
 
   def map_page
-    @producers = Producer.all
+    @producers = Producer.where.not(address: "")
     @hash = Gmaps4rails.build_markers(@producers) do |producer, marker|
-      marker.lat producer.latitude
-      marker.lng producer.longitude
-    end
+        marker.lat producer.latitude
+        marker.lng producer.longitude
+      end
   end
 
   def country_usa

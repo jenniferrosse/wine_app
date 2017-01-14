@@ -9,6 +9,7 @@ class Producer < ActiveRecord::Base
     where("name ILIKE ? OR country ILIKE ? OR region ILIKE ? OR sub_region ILIKE ? OR about ILIKE ?", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%")
   }
 
+  scope :map_producers, ->{ where.not(address: '') }
 
   #def self.search(search)
    # where("name ILIKE ? OR country ILIKE ? OR region ILIKE ? OR sub_region ILIKE ? OR about ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
