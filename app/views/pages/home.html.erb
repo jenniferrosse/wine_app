@@ -9,10 +9,64 @@
         <%= link_to 'Search Producers', producers_path, class: "btn btn-default btn-lg"  %>
       </div>  
       <div class="col-md-4">
-        
       </div>
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <h4>Producers in California</h4>  
+    <% @producers_california.each do |producer| %>
+      <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="icon">
+          <div class="thumbnail">
+            <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
+            <div class="caption">
+              <h5 class="text-center"><%= link_to producer.name, producer %></h5>
+            </div>
+          </div> 
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+      <h4>Producers in France</h4>  
+      <% @producers_france.each do |producer| %>
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="icon">
+            <div class="thumbnail">
+              <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
+              <div class="caption">
+                <h5 class="text-center"><%= link_to producer.name, producer %></h5>
+              </div>
+            </div> 
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <h4>Producers in Oregon</h4>  
+      <% @producers_oregon.each do |producer| %>
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="icon">
+            <div class="thumbnail">
+              <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
+              <div class="caption">
+                <h5 class="text-center"><%= link_to producer.name, producer %></h5>
+              </div>
+            </div> 
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
+</div>
+
 
 
