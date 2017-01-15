@@ -37,8 +37,8 @@
       <li><%= link_to "Burgundy", producers_path(:region => "Burgundy") %></li>
       <li><%= link_to "Champagne", producers_path(:region => "Champagne") %></li>
       <li><%= link_to "Languedoc", producers_path(:region => "Languedoc") %></li>
-      <li><%= link_to "Loire Valley", producers_path(:region => "Loire Valley") %></li>
-      <li><%= link_to "Rhone Valley", producers_path(:region => "Rhone Valley") %></li>
+      <li><%= link_to "Loire", producers_path(:region => "Loire") %></li>
+      <li><%= link_to "Rhone", producers_path(:region => "Rhone") %></li>
       <li><a href="#">Other Regions</a></li>
       <li role="separator" class="divider"></li>
        <li><%= link_to "All France", producers_path(:country => "France") %></li>
@@ -93,12 +93,15 @@
   <% @producers.each do |producer| %>
     <div class="col-md-3 col-sm-4 col-xs-6">
       <div class="icon">
-        <div class="thumbnail">
           <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
           <div class="caption">
-            <h5 class="text-center"><%= link_to producer.name, producer %></h5>
-            </div>
-        </div> 
+            <h4 class="text-center"><small><%= link_to producer.name, producer %></h4>
+            <h5 class="text-center"><small>
+              <%= producer.country %><br>
+              <%= producer.region %>, 
+              <%= producer.sub_region %>
+            </h5>
+          </div>
       </div>
     </div>
   <% end %>
