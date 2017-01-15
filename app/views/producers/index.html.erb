@@ -93,15 +93,18 @@
   <% @producers.each do |producer| %>
     <div class="col-md-3 col-sm-4 col-xs-6">
       <div class="icon">
-          <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
-          <div class="caption">
-            <h4 class="text-center"><small><%= link_to producer.name, producer %></h4>
-            <h5 class="text-center"><small>
-              <%= producer.country %><br>
-              <%= producer.region %>, 
-              <%= producer.sub_region %>
-            </h5>
-          </div>
+        <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
+        <div class="caption">
+          <h4 class="text-center"><small><%= link_to producer.name, producer %></small></h4>
+          <h5 class="text-center"><small>
+            <%= producer.country %><br>
+            <%= producer.region %>, 
+            <%= producer.sub_region %>
+          </small></h5>
+          <br>
+          <br>
+          <br>
+        </div>
       </div>
     </div>
   <% end %>

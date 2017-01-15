@@ -6,7 +6,8 @@
       <div class="col-md-8">
         <p>With over 1,000 producers, our database is the most comprehensive list of wine producers using practices that respect the earth, maintain the integrety of the product, and taste like they should, without reliance on chemicals or manipulation.</p>
         <p>Find wine producers that use natural methods.</p>
-        <%= link_to 'Search Producers', producers_path, class: "btn btn-default btn-lg"  %>
+        <%= link_to 'Search Producers', producers_path, class: "btn btn-primary-outline btn-lg"  %>
+        <%= link_to 'View Map', producers_map_page_path, class: "btn btn-info btn-lg"  %>
       </div>  
       <div class="col-md-4">
       </div>
@@ -16,18 +17,16 @@
 
 <div class="container">
   <div class="row">
-    <h2><small>Producers in California</h2>
+    <h2><small>Producers in California</small></h2>
     <br>    
     <% @producers_california.each do |producer| %>
       <div class="col-md-2 col-sm-2 col-xs-4">
         <div class="icon">
-      
-            <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
-            <div class="caption">
-              <h4 class="text-center"><small><%= link_to producer.name, producer %></h4>
-              <h5 class="text-center"><small><%= producer.sub_region %></h5>
-            </div>
-          
+          <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
+          <div class="caption">
+            <h4 class="text-center"><small><%= link_to producer.name, producer %></small></h4>
+            <h5 class="text-center"><small><%= producer.sub_region %></small></h5>
+          </div>
         </div>
       </div>
     <% end %>
@@ -37,39 +36,39 @@
   <br>
   <br>
   <div class="row">
-      <h2><small>Producers in France</h4>
-      <br>  
-      <% @producers_france.each do |producer| %>
-        <div class="col-md-2 col-sm-2 col-xs-4">
-          <div class="icon">
-            <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
-            <div class="caption">
-              <h4 class="text-center"><small><%= link_to producer.name, producer %></h4>
-              <h5 class="text-center"><small><%= producer.region %></h5>
-            </div>
+    <h2><small>Producers in France</small></h2>
+    <br>  
+    <% @producers_france.each do |producer| %>
+      <div class="col-md-2 col-sm-2 col-xs-4">
+        <div class="icon">
+          <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
+          <div class="caption">
+            <h4 class="text-center"><small><%= link_to producer.name, producer %></small></h4>
+            <h5 class="text-center"><small><%= producer.region %></small></h5>
           </div>
         </div>
-      <% end %>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row">
-      <h2><small>Producers in Oregon</h4>
-      <br>    
-      <% @producers_oregon.each do |producer| %>
-        <div class="col-md-2 col-sm-2 col-xs-4">
-          <div class="icon">
-            <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
-            <div class="caption">
-              <h4 class="text-center"><small><%= link_to producer.name, producer %></h4>
-              <h5 class="text-center"><small><%= producer.sub_region %></h5>
-            </div>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+    <h2><small>Producers in Oregon</small></h2>
+    <br>    
+    <% @producers_oregon.each do |producer| %>
+      <div class="col-md-2 col-sm-2 col-xs-4">
+        <div class="icon">
+          <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
+          <div class="caption">
+            <h4 class="text-center"><small><%= link_to producer.name, producer %></small></h4>
+            <h5 class="text-center"><small><%= producer.sub_region %></small></h5>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
 
 
 </div>
