@@ -97,8 +97,10 @@
           <h4 class="text-center"><small><%= link_to producer.name, producer %></small></h4>
           <h5 class="text-center"><small>
             <%= producer.country %><br>
-            <%= producer.region %>, 
-            <%= producer.sub_region %>
+            <%= producer.region %>
+            <% unless producer.sub_region.blank? %>
+              , <%= producer.sub_region %>
+            <% end %>
           </small></h5>
           <br>
           <br>
