@@ -16,14 +16,16 @@
 
 <div class="container">
   <div class="row">
-    <h4>Producers in California</h4>  
+    <h2><small>Producers in California</h2>
+    <br>    
     <% @producers_california.each do |producer| %>
       <div class="col-md-2 col-sm-2 col-xs-4">
         <div class="icon">
       
             <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
             <div class="caption">
-              <h5 class="text-center"><%= link_to producer.name, producer %></h5>
+              <h4 class="text-center"><small><%= link_to producer.name, producer %></h4>
+              <h5 class="text-center"><small><%= producer.sub_region %></h5>
             </div>
           
         </div>
@@ -32,14 +34,18 @@
   </div>
   <br>
   <br>
+  <br>
+  <br>
   <div class="row">
-      <h4>Producers in France</h4>  
+      <h2><small>Producers in France</h4>
+      <br>  
       <% @producers_france.each do |producer| %>
         <div class="col-md-2 col-sm-2 col-xs-4">
           <div class="icon">
             <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
             <div class="caption">
-              <h5 class="text-center"><%= link_to producer.name, producer %></h5>
+              <h4 class="text-center"><small><%= link_to producer.name, producer %></h4>
+              <h5 class="text-center"><small><%= producer.region %></h5>
             </div>
           </div>
         </div>
@@ -47,14 +53,18 @@
     </div>
     <br>
     <br>
+    <br>
+    <br>
     <div class="row">
-      <h4>Producers in Oregon</h4>  
+      <h2><small>Producers in Oregon</h4>
+      <br>    
       <% @producers_oregon.each do |producer| %>
         <div class="col-md-2 col-sm-2 col-xs-4">
           <div class="icon">
             <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
             <div class="caption">
-              <h5 class="text-center"><%= link_to producer.name, producer %></h5>
+              <h4 class="text-center"><small><%= link_to producer.name, producer %></h4>
+              <h5 class="text-center"><small><%= producer.sub_region %></h5>
             </div>
           </div>
         </div>
