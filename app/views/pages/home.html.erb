@@ -18,14 +18,14 @@
   <div class="row">
     <h4>Producers in California</h4>  
     <% @producers_california.each do |producer| %>
-      <div class="col-md-3 col-sm-4 col-xs-6">
+      <div class="col-md-2 col-sm-2 col-xs-4">
         <div class="icon">
-          <div class="thumbnail">
+      
             <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
             <div class="caption">
               <h5 class="text-center"><%= link_to producer.name, producer %></h5>
             </div>
-          </div> 
+          
         </div>
       </div>
     <% end %>
@@ -35,14 +35,12 @@
   <div class="row">
       <h4>Producers in France</h4>  
       <% @producers_france.each do |producer| %>
-        <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="col-md-2 col-sm-2 col-xs-4">
           <div class="icon">
-            <div class="thumbnail">
-              <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
-              <div class="caption">
-                <h5 class="text-center"><%= link_to producer.name, producer %></h5>
-              </div>
-            </div> 
+            <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
+            <div class="caption">
+              <h5 class="text-center"><%= link_to producer.name, producer %></h5>
+            </div>
           </div>
         </div>
       <% end %>
@@ -52,14 +50,12 @@
     <div class="row">
       <h4>Producers in Oregon</h4>  
       <% @producers_oregon.each do |producer| %>
-        <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="col-md-2 col-sm-2 col-xs-4">
           <div class="icon">
-            <div class="thumbnail">
-              <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
-              <div class="caption">
-                <h5 class="text-center"><%= link_to producer.name, producer %></h5>
-              </div>
-            </div> 
+            <%= link_to image_tag(producer.thumbnail.url(:small), class: "img-responsive aspect"), producer %>
+            <div class="caption">
+              <h5 class="text-center"><%= link_to producer.name, producer %></h5>
+            </div>
           </div>
         </div>
       <% end %>
