@@ -29,8 +29,14 @@ class ProducersController < ApplicationController
   def map_page
     @producers = Producer.where.not(address: "")
     @hash = Gmaps4rails.build_markers(@producers) do |producer, marker|
+        producer_path = view_context.link_to producer.name, producer_path(producer)
         marker.lat producer.latitude
         marker.lng producer.longitude
+        marker.infowindow "<b>#{producer_path}</b>" + "<br>" + 
+          producer.region + "<br>" + 
+          producer.sub_region + "<br>" + 
+          producer.country + "<br>" + 
+          producer.website
       end
   end
 
