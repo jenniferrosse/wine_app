@@ -21,7 +21,7 @@ body {
 .navbar-default {
     background-color: fff;
     opacity: .6;
-    height: 70px;
+    height: 55px;
 }
 
 .btn.sharp {
@@ -32,12 +32,12 @@ body {
   color: gray;
 }
 
-.jumbotron-home{
+.jumbotron-home {
    background-image: url(vineyard.jpg);
    background-position: 0% 25%;
    background-size: cover;
    text-align: center;
-   height: 350px;
+   height: 150px;
    padding: 25px 0;
    background-repeat: no-repeat;
    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
@@ -55,7 +55,28 @@ body {
     }
 }
 
+.jumbotron-index {
+   background-image: url(vineyard.jpg);
+   background-position: 0% 25%;
 
+   text-align: center;
+   height: 350px;
+   padding: 25px 0;
+   background-repeat: no-repeat;
+   min-height: 15%;  /* Fallback for browsers do NOT support vh unit */
+   min-height: 15vh; /* These two lines are counted as one :-)       */
+   display: flex;
+   align-items: center;
+     h1, h2, p {
+      color: white;
+     }
+    .btn-primary-outline {
+      color: #fff;
+      background-color: transparent;
+      border-color: #fff;
+      margin-top: 50px;
+    }
+}
 .glyphicon-chevron-down {
   width: 100px;
   height: 100px;
